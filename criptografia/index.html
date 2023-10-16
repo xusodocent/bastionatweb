@@ -1,0 +1,824 @@
+
+<!doctype html>
+<html lang="ca" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../instalar_gns3_primer_escenari/">
+      
+      
+        <link rel="next" href="../Prac_T2/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.2">
+    
+    
+      
+        <title>Criptografía - BASTIONAT DE XARXES I SISTEMES - CE Ciberseguretat</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.d451bc0e.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.a5377069.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#1-introduccion" class="md-skip">
+          Salta el contingut
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Capçalera">
+    <a href=".." title="BASTIONAT DE XARXES I SISTEMES - CE Ciberseguretat" class="md-header__button md-logo" aria-label="BASTIONAT DE XARXES I SISTEMES - CE Ciberseguretat" data-md-component="logo">
+      
+  <img src="../img/logocap.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            BASTIONAT DE XARXES I SISTEMES - CE Ciberseguretat
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Criptografía
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Format oscur"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Format oscur" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Format clar"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Format clar" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Cerca" placeholder="Cerca" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Cerca">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Neteja" aria-label="Neteja" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicialitzant cerca
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Pestanyes" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+    
+  
+  Inici
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../instalar_gns3_primer_escenari/" class="md-tabs__link">
+          
+  
+  GNS3
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+  Criptografía
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navegació" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="BASTIONAT DE XARXES I SISTEMES - CE Ciberseguretat" class="md-nav__button md-logo" aria-label="BASTIONAT DE XARXES I SISTEMES - CE Ciberseguretat" data-md-component="logo">
+      
+  <img src="../img/logocap.png" alt="logo">
+
+    </a>
+    BASTIONAT DE XARXES I SISTEMES - CE Ciberseguretat
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Inici
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    GNS3
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            GNS3
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../instalar_gns3_primer_escenari/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. Instal·lació de GNS3
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Criptografía
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Criptografía
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Tema
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Tema
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Taula de continguts">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Taula de continguts
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-introduccion" class="md-nav__link">
+    1. Introducción
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-funciones-hash" class="md-nav__link">
+    2. Funciones HASH
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-cifrado-simetrico" class="md-nav__link">
+    3. Cifrado simétrico
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-cifrado-asimetrico-criptografia-de-clave-publica" class="md-nav__link">
+    4. Cifrado asimétrico. Criptografía de clave pública.
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Cifrado asimétrico. Criptografía de clave pública.">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ejemplo-1-mensaje-secreto" class="md-nav__link">
+    Ejemplo 1: Mensaje secreto
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejemplo-2-firma-digital" class="md-nav__link">
+    Ejemplo 2: Firma digital
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-infraestructura-pki" class="md-nav__link">
+    5. Infraestructura PKI
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Infraestructura PKI">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#seguridad-en-la-capa-de-trasporte" class="md-nav__link">
+    Seguridad en la capa de trasporte
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pki-propia-con-openssl" class="md-nav__link">
+    PKI própia con OpenSSL
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Prac_T2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pràctiques del tema
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Taula de continguts">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Taula de continguts
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-introduccion" class="md-nav__link">
+    1. Introducción
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-funciones-hash" class="md-nav__link">
+    2. Funciones HASH
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-cifrado-simetrico" class="md-nav__link">
+    3. Cifrado simétrico
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-cifrado-asimetrico-criptografia-de-clave-publica" class="md-nav__link">
+    4. Cifrado asimétrico. Criptografía de clave pública.
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Cifrado asimétrico. Criptografía de clave pública.">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ejemplo-1-mensaje-secreto" class="md-nav__link">
+    Ejemplo 1: Mensaje secreto
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejemplo-2-firma-digital" class="md-nav__link">
+    Ejemplo 2: Firma digital
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-infraestructura-pki" class="md-nav__link">
+    5. Infraestructura PKI
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Infraestructura PKI">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#seguridad-en-la-capa-de-trasporte" class="md-nav__link">
+    Seguridad en la capa de trasporte
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pki-propia-con-openssl" class="md-nav__link">
+    PKI própia con OpenSSL
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>Tema</h1>
+
+<h2 id="1-introduccion">1. Introducción</h2>
+<blockquote>
+<p>La <strong>criptografía</strong> es el desarrollo de un conjunto de técnicas que permiten alterar y modificar mensajes o archivos con el objetivo de que no puedan ser leídos por todos aquellos usuarios que no estén autorizados a hacerlo. Hoy en día, en pleno auge de las comunicaciones digitales, funciona como la base para cualquier proceso de seguridad informática.</p>
+</blockquote>
+<p>Esta disciplina nació en la Antigua Grecia con el objetivo de evitar que se difundan secretos militares. Los mensajes se encriptaban con métodos sencillos como, por ejemplo, alternando las letras del abecedario. Con el correr de los siglos esas técnicas se fueron complejizando considerablemente y actualmente atraviesan gran parte de nuestra vida cotidiana.</p>
+<p>Entre el Antiguo Egipto e Internet, los criptogramas (los mensajes cifrados) han protagonizado buena parte de los grandes episodios históricos y un sinfín de anécdotas. Existen mensajes cifrados entre los artículos del Kamasutra, se usaron por gobernantes y militares ya en los primeros estados como Egipto, Babilonia, Roma... Abundan en los textos diplomáticos de toda época, indispensables para las órdenes militares y los ejércitos modernos en tiempos de guerra y, por supuesto, esenciales en la actividad de los espías. Hoy en día, con las nuevas tecnologías el uso de la criptografía se ha extendido más allá de su tradicional esfera estatal o política, y es vital también para la actividad diaria de las empresas y ciudadanos particulares.</p>
+<p>Algunos ejemplos de la evolución a lo largo de la historia del uso de elementos criptográficos són los siguientes. Los espartanos utilizaron, hacia el 400 a.C., la <strong>Escitala</strong>, que puede considerarse el primer sistema de criptografía por transposición, es decir, que se caracteriza por ocultar el significado real de un texto alterando el orden de los signos que lo conforman. Los militares de la ciudad-estado griega escribían sus mensajes sobre una tela que envolvía una vara. El mensaje sólo podía leerse cuando se enrollaba la tela sobre un bastón del mismo grosor, que poseía el destinatario lícito del mensaje (¿el origen del "bastón de mando"?).El método de la escitala era extremadamente sencillo, como también lo era el que utilizó Julio César, basado en la sustitución de cada letra por la situada tres puestos después en el alfabeto latino. A este cifrado por sustitución sencilla se le conoce como <strong>cifrado César</strong>. </p>
+<p><img alt="Escitala" src="../img/escitala.png" /></p>
+<p><img alt="Cifrado César" src="../img/cifrado_cesar.jpg" /></p>
+<blockquote>
+<p>Mira <em><a href="https://www.youtube.com/watch?v=Z0WgfYGb2rE">este sencillo video</a></em> sobre el funcionamiento de la escitala.</p>
+<p>Una <em><a href="https://www.youtube.com/watch?v=Q8K311s7EiM">buena introducción</a></em> a la criptografia y las matemáticas.</p>
+</blockquote>
+<p>A medida que la tecnología evolucionó, los elementos criptográficos se volvieron más complejos, encontrando ejemplos cómo la <strong>máquina Enigma</strong> en la II Guerra Mundial.</p>
+<p><img alt="Màquina enigma" src="../img/enigma.jpg" /></p>
+<h2 id="2-funciones-hash">2. Funciones HASH</h2>
+<blockquote>
+<p>Una función criptográfica hash- usualmente conocida como “hash”- es un algoritmo matemático que transforma cualquier bloque arbitrario de datos en una nueva serie de caracteres con una longitud fija. Independientemente de la longitud de los datos de entrada, el valor hash de salida tendrá siempre la misma longitud.</p>
+</blockquote>
+<p><img alt="Hash" src="../img/hash1.png" /></p>
+<p>A modo de ejemplo introductorio, vemos en la siguiente figura que las funciones HASH se pueden aplicar tanto a texto cómo a ficheros de datos.</p>
+<p><img alt="Hash" src="../img/hash2.png" /></p>
+<p>Lee <em><a href="https://www.genbeta.com/desarrollo/que-son-y-para-que-sirven-los-hash-funciones-de-resumen-y-firmas-digitales">este artículo</a></em> en el que se explica el funcionamiento de las funciones HASH.</p>
+<blockquote>
+<p>Debes de realizar la tarea titulada <strong>QuickHash</strong>.</p>
+<p>Debes de realizar la tarea titulada <strong>SHA512SUM</strong></p>
+</blockquote>
+<h2 id="3-cifrado-simetrico">3. Cifrado simétrico</h2>
+<blockquote>
+<p>Solo utiliza una clave para cifrar y descifrar. Ésta debe ser previamente conocida por todas las partes involucradas. </p>
+</blockquote>
+<p>Según se explica en la <em><a href="https://nic.ar/es/enterate/novedades/que-es-criptografia">web de NIC Argentina</a></em> podemos imaginar este sistema como algo similar a la seguridad de nuestra casa. Tenemos una llave para cerrar la puerta y estamos tranquilos que solo las personas con esa misma llave la van a poder abrir. Tenemos la ventaja que podemos compartirla con cualquier persona de confianza, pero también existe la posibilidad de que se extravíe, o de que alguien la robe. Esa es la principal desventaja de la criptografía simétrica.</p>
+<p><img alt="Criptografia" src="../img/criptosimetrica.png" /></p>
+<blockquote>
+<p>Debes leer el <strong><a href="https://www.genbeta.com/desarrollo/tipos-de-criptografia-simetrica-asimetrica-e-hibrida">siguiente artículo</a></strong> y visualizar el <strong><a href="https://www.youtube.com/watch?v=46Pwz2V-t8Q">video</a></strong></p>
+<p>Debes de realizar la tarea titulada <strong>Cifrado simétrico: descifrado</strong>.</p>
+<p>Debes de realizar la tarea titulada <strong>Cifrado simétrico: cifrado</strong>.</p>
+</blockquote>
+<h2 id="4-cifrado-asimetrico-criptografia-de-clave-publica">4. Cifrado asimétrico. Criptografía de clave pública.</h2>
+<blockquote>
+<p>Es un sistema basado en el uso de dos claves, una clave privada que sólamente puede conocer el propietario, y una clave pública (vinculada con la privada) que conocen todos los participantes en la comunicación. </p>
+</blockquote>
+<p><img alt="Dos claus" src="../img/dosllaves.png" /></p>
+<p>Si una persona que emite un mensaje a un destinatario, usa la llave pública de este último para cifrarlo; una vez cifrado, solo la clave privada del destinatario podrá descifrar el mensaje, ya que es el único que debería conocerla. Por tanto se logra la <strong>confidencialidad</strong> del envío del mensaje, es extremadamente difícil que lo descifre alguien salvo el destinatario . Cualquiera, usando la llave pública del destinatario, puede cifrarle mensajes; los que serán descifrados por el destinatario usando su clave privada.</p>
+<p>Si el propietario del par de claves usa su clave privada para cifrar un mensaje, cualquiera puede descifrarlo utilizando la clave pública del primero. En este caso se consigue la <strong>identificación</strong> y <strong>autentificación</strong> del remitente, ya que se sabe que solo pudo haber sido él quien empleó su clave privada (salvo que un tercero la haya obtenido). Esta idea es el fundamento de la <strong>firma digital</strong>, donde jurídicamente existe la presunción de que el firmante es efectivamente el dueño de la clave privada.</p>
+<p>Los <strong>sistemas de cifrado de clave pública</strong> o <strong>sistemas de cifrado asimétricos</strong> se inventaron con el fin de evitar por completo el problema del intercambio de claves de los sistemas de cifrado simétricos. Con las claves públicas no es necesario que el remitente y el destinatario se pongan de acuerdo en la clave a emplear. Todo lo que se requiere es que, antes de iniciar la comunicación secreta, cada uno debe conseguir la llave pública del otro y cuidar cada uno su llave privada. Es más, esas mismas claves públicas pueden ser usada por cualquiera que desee comunicarse con alguno de ellos siempre que se utilice correctamente la llave pública de cada uno. </p>
+<h3 id="ejemplo-1-mensaje-secreto">Ejemplo 1: Mensaje secreto</h3>
+<p>Supongamos que Ana quiere enviar a David un mensaje secreto que solo él pueda leer.</p>
+<p>Primero, David envía a Ana una caja abierta, pero con cerradura, cerradura que se bloqueará una vez se cierre la caja, y que solo podrá abrirse con una llave, que solo David tiene. Ana recibe la caja, escribe el mensaje, lo pone en la caja y la cierra con su cerradura (ahora Ana ya no podrá abrir la caja para acceder de nuevo al mensaje). Finalmente, Ana envía la caja a David y este la abre con su llave. En este ejemplo, la caja con la cerradura es la «clave pública» de David, y la llave de la cerradura es su «clave privada». </p>
+<p><img alt="Exemple" src="../img/ejemplo1.png" /></p>
+<p>"Caja" y "cerradura" son variables, dos datos (en el caso más sencillo, dos números) necesarios ambos para resolver un determinado problema matemático de manera inmediata. Es cierto que teniendo solo la "cerradura" (alguien que interceptase la caja antes de que llegue a David), un cerrajero experto podría abrir la caja sin necesidad de la "llave", pero, en la práctica, un sistema de cifrado competente exhibe una complejidad tal que su resolución, desconociendo la clave privada del destinatario, exige de una potencia computacional o de un coste en tiempo desproporcionadamente mayor al valor esperado del robo de la información (la computación cuántica, por ejemplo, reduciría en mucho dicho coste, volviendo obsoletos no pocos sistemas criptográficos que a día de hoy pueden considerarse efectivamente invulnerables). </p>
+<h3 id="ejemplo-2-firma-digital">Ejemplo 2: Firma digital</h3>
+<p><img alt="Exemple" src="../img/ejemplo2.png" /></p>
+<blockquote>
+<p><strong>Debes de realizar las tareas</strong> con los títulos siguientes en Moodle.</p>
+</blockquote>
+<ul>
+<li>Cifrado asimétrico - Obtener claves públicas de terceros</li>
+<li>Cifrado asimétrico - Cifrar un archivo</li>
+<li>Cifrado asimétrico - Crear claves</li>
+<li>Cifrado asimétrico - Difusión de tu clave pública</li>
+<li>Cifrado asimétrico - Descifrar un archivo</li>
+<li>Firma digital</li>
+</ul>
+<h2 id="5-infraestructura-pki">5. Infraestructura PKI</h2>
+<p>Según indica Ramón Onrubia en los apuntes de su curso, tenemos el siguiente escenario. </p>
+<p>Hemos visto en el punto anterior, que la criptografía de clave pública nos proporciona autenticación, confidencialidad, integridad y no repudio, necesarios hoy en día para garantizar una buena seguridad en la información. Como hemos visto, esto se consigue con un sistema de claves públicas y privadas que combinándolos adecuadamente nos proporcionan los servicios citados anteriormente.</p>
+<p>Pero el principal problema que surge es la confianza. ¿Cómo puedo garantizar que la clave pública de un usuario es suya y no es la de un impostor? Cualquiera puede generar un par de claves y pretender ser otra persona. Aquí es donde entran en juego las autoridades de certificación (AC o CA, del inglés Certification Authority), que asumen la responsabilidad de autenticar la identidad de esa clave pública y que aparecerá en un documento electrónico llamado certificado digital.</p>
+<p>Todo este conjunto de certificados, firmas digitales, autoridades de certificación y los procesos que intervienen, forman parte de lo que se conoce como infraestructura de clave pública que pasamos a definir a continuación.</p>
+<blockquote>
+<p>Por infraestructura de clave pública o PKI (Public Key Infraestructure) se entiende el conjunto de herramientas hardware, software, procesos y procedimientos legales que permiten crear, gestionar, almacenar, distribuir y revocar certificados digitales.</p>
+<p>Este término incluye por tanto las autoridades de certificación y al resto de elementos que participan como los certificados digitales o los algoritmos de clave pública y firma digital en comunicaciones  y transacciones electrónicas.</p>
+</blockquote>
+<p>Hay que indicar también que para usar la firma digital y los algoritmos de clave pública, no es necesaria la PKI, como se ha podido ver en las prácticas del punto anterior.</p>
+<p>Una infraestructura de clave pública consta de:</p>
+<ul>
+<li>Autoridades de Certificación (CAs) que llevan la gestión de los certificados</li>
+<li>Autoridades de Registro (RAs), que autorizan la asociación entre una clave pública y el titular de un certificado</li>
+<li>Partes utilizadoras, que verifican certificados y firmas</li>
+<li>Repositorios (Directorios), que almacenan y distribuyen certificados y estados de los mismos</li>
+<li>Titulares de Certificados, que son las entidades finales, usuarios o suscriptores de los certificados y por tanto a quien pertenecen</li>
+<li>Autoridad de Validación (opcional), que suministra información de forma online (en tiempo real) acerca del estado de un certificado</li>
+</ul>
+<p><img alt="Infraestructura PKI" src="../img/pki_componentes.png" /></p>
+<blockquote>
+<p>Realiza la <code>Práctica 2: verificación de certificados digitales.</code> de los apuntes de Ramón Onrubia.</p>
+</blockquote>
+<h3 id="seguridad-en-la-capa-de-trasporte">Seguridad en la capa de trasporte</h3>
+<blockquote>
+<p>Debes de consultar el apartado titulado <code>Seguridad de la capa de transporte</code> de Moodle y realizar las actividades que allí se indican.</p>
+</blockquote>
+<h3 id="pki-propia-con-openssl">PKI própia con OpenSSL</h3>
+<blockquote>
+<p>Debes de consultar el apartado titulado <code>PKI propia con OpenSSL</code> de Moodle y realizar las actividades que allí se indican.</p>
+</blockquote>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "content.code.copy", "content.code.annotate", "content.code.select"], "search": "../assets/javascripts/workers/search.a264c092.min.js", "translations": {"clipboard.copied": "Copiat al porta-retalls", "clipboard.copy": "C\u00f2pia al porta-retalls", "search.result.more.one": "1 m\u00e9s en aquesta p\u00e0gina", "search.result.more.other": "# m\u00e9s en aquesta p\u00e0gina", "search.result.none": "Cap document coincideix", "search.result.one": "1 document coincident", "search.result.other": "# documents coincidents", "search.result.placeholder": "Escriu per a comen\u00e7ar a cercar", "search.result.term.missing": "Desaparegut", "select.version": "Selecciona la versi\u00f3"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.726fbb30.min.js"></script>
+      
+    
+  </body>
+</html>
