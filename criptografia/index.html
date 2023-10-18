@@ -508,26 +508,6 @@
     5. Infraestructura PKI
   </a>
   
-    <nav class="md-nav" aria-label="5. Infraestructura PKI">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#seguridad-en-la-capa-de-trasporte" class="md-nav__link">
-    Seguridad en la capa de trasporte
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#pki-propia-con-openssl" class="md-nav__link">
-    PKI própia con OpenSSL
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
     </ul>
@@ -663,26 +643,6 @@
     5. Infraestructura PKI
   </a>
   
-    <nav class="md-nav" aria-label="5. Infraestructura PKI">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#seguridad-en-la-capa-de-trasporte" class="md-nav__link">
-    Seguridad en la capa de trasporte
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#pki-propia-con-openssl" class="md-nav__link">
-    PKI própia con OpenSSL
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
     </ul>
@@ -703,47 +663,52 @@
   <h1>Tema</h1>
 
 <h2 id="1-introduccion">1. Introducción</h2>
-<blockquote>
+<div class="admonition note">
+<p class="admonition-title">Criptografía</p>
 <p>La <strong>criptografía</strong> es el desarrollo de un conjunto de técnicas que permiten alterar y modificar mensajes o archivos con el objetivo de que no puedan ser leídos por todos aquellos usuarios que no estén autorizados a hacerlo. Hoy en día, en pleno auge de las comunicaciones digitales, funciona como la base para cualquier proceso de seguridad informática.</p>
-</blockquote>
+</div>
 <p>Esta disciplina nació en la Antigua Grecia con el objetivo de evitar que se difundan secretos militares. Los mensajes se encriptaban con métodos sencillos como, por ejemplo, alternando las letras del abecedario. Con el correr de los siglos esas técnicas se fueron complejizando considerablemente y actualmente atraviesan gran parte de nuestra vida cotidiana.</p>
 <p>Entre el Antiguo Egipto e Internet, los criptogramas (los mensajes cifrados) han protagonizado buena parte de los grandes episodios históricos y un sinfín de anécdotas. Existen mensajes cifrados entre los artículos del Kamasutra, se usaron por gobernantes y militares ya en los primeros estados como Egipto, Babilonia, Roma... Abundan en los textos diplomáticos de toda época, indispensables para las órdenes militares y los ejércitos modernos en tiempos de guerra y, por supuesto, esenciales en la actividad de los espías. Hoy en día, con las nuevas tecnologías el uso de la criptografía se ha extendido más allá de su tradicional esfera estatal o política, y es vital también para la actividad diaria de las empresas y ciudadanos particulares.</p>
 <p>Algunos ejemplos de la evolución a lo largo de la historia del uso de elementos criptográficos són los siguientes. Los espartanos utilizaron, hacia el 400 a.C., la <strong>Escitala</strong>, que puede considerarse el primer sistema de criptografía por transposición, es decir, que se caracteriza por ocultar el significado real de un texto alterando el orden de los signos que lo conforman. Los militares de la ciudad-estado griega escribían sus mensajes sobre una tela que envolvía una vara. El mensaje sólo podía leerse cuando se enrollaba la tela sobre un bastón del mismo grosor, que poseía el destinatario lícito del mensaje (¿el origen del "bastón de mando"?).El método de la escitala era extremadamente sencillo, como también lo era el que utilizó Julio César, basado en la sustitución de cada letra por la situada tres puestos después en el alfabeto latino. A este cifrado por sustitución sencilla se le conoce como <strong>cifrado César</strong>. </p>
 <p><img alt="Escitala" src="../img/escitala.png" /></p>
 <p><img alt="Cifrado César" src="../img/cifrado_cesar.jpg" /></p>
-<blockquote>
+<div class="admonition info">
+<p class="admonition-title">La escitala</p>
 <p>Mira <em><a href="https://www.youtube.com/watch?v=Z0WgfYGb2rE">este sencillo video</a></em> sobre el funcionamiento de la escitala.</p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Criptografía y matemática</p>
 <p>Una <em><a href="https://www.youtube.com/watch?v=Q8K311s7EiM">buena introducción</a></em> a la criptografia y las matemáticas.</p>
-</blockquote>
+</div>
 <p>A medida que la tecnología evolucionó, los elementos criptográficos se volvieron más complejos, encontrando ejemplos cómo la <strong>máquina Enigma</strong> en la II Guerra Mundial.</p>
 <p><img alt="Màquina enigma" src="../img/enigma.jpg" /></p>
 <h2 id="2-funciones-hash">2. Funciones HASH</h2>
-<blockquote>
+<div class="admonition info">
+<p class="admonition-title">HASH</p>
 <p>Una función criptográfica hash- usualmente conocida como “hash”- es un algoritmo matemático que transforma cualquier bloque arbitrario de datos en una nueva serie de caracteres con una longitud fija. Independientemente de la longitud de los datos de entrada, el valor hash de salida tendrá siempre la misma longitud.</p>
-</blockquote>
+</div>
 <p><img alt="Hash" src="../img/hash1.png" /></p>
 <p>A modo de ejemplo introductorio, vemos en la siguiente figura que las funciones HASH se pueden aplicar tanto a texto cómo a ficheros de datos.</p>
 <p><img alt="Hash" src="../img/hash2.png" /></p>
+<div class="admonition info">
+<p class="admonition-title">Artículo</p>
 <p>Lee <em><a href="https://www.genbeta.com/desarrollo/que-son-y-para-que-sirven-los-hash-funciones-de-resumen-y-firmas-digitales">este artículo</a></em> en el que se explica el funcionamiento de las funciones HASH.</p>
-<blockquote>
-<p>Debes de realizar la tarea titulada <strong>QuickHash</strong>.</p>
-<p>Debes de realizar la tarea titulada <strong>SHA512SUM</strong></p>
-</blockquote>
+</div>
 <h2 id="3-cifrado-simetrico">3. Cifrado simétrico</h2>
-<blockquote>
+<div class="admonition warning">
+<p class="admonition-title">Uso de claves</p>
 <p>Solo utiliza una clave para cifrar y descifrar. Ésta debe ser previamente conocida por todas las partes involucradas. </p>
-</blockquote>
+</div>
 <p>Según se explica en la <em><a href="https://nic.ar/es/enterate/novedades/que-es-criptografia">web de NIC Argentina</a></em> podemos imaginar este sistema como algo similar a la seguridad de nuestra casa. Tenemos una llave para cerrar la puerta y estamos tranquilos que solo las personas con esa misma llave la van a poder abrir. Tenemos la ventaja que podemos compartirla con cualquier persona de confianza, pero también existe la posibilidad de que se extravíe, o de que alguien la robe. Esa es la principal desventaja de la criptografía simétrica.</p>
 <p><img alt="Criptografia" src="../img/criptosimetrica.png" /></p>
 <blockquote>
 <p>Debes leer el <strong><a href="https://www.genbeta.com/desarrollo/tipos-de-criptografia-simetrica-asimetrica-e-hibrida">siguiente artículo</a></strong> y visualizar el <strong><a href="https://www.youtube.com/watch?v=46Pwz2V-t8Q">video</a></strong></p>
-<p>Debes de realizar la tarea titulada <strong>Cifrado simétrico: descifrado</strong>.</p>
-<p>Debes de realizar la tarea titulada <strong>Cifrado simétrico: cifrado</strong>.</p>
 </blockquote>
 <h2 id="4-cifrado-asimetrico-criptografia-de-clave-publica">4. Cifrado asimétrico. Criptografía de clave pública.</h2>
-<blockquote>
+<div class="admonition note">
+<p class="admonition-title">Asimétrico</p>
 <p>Es un sistema basado en el uso de dos claves, una clave privada que sólamente puede conocer el propietario, y una clave pública (vinculada con la privada) que conocen todos los participantes en la comunicación. </p>
-</blockquote>
+</div>
 <p><img alt="Dos claus" src="../img/dosllaves.png" /></p>
 <p>Si una persona que emite un mensaje a un destinatario, usa la llave pública de este último para cifrarlo; una vez cifrado, solo la clave privada del destinatario podrá descifrar el mensaje, ya que es el único que debería conocerla. Por tanto se logra la <strong>confidencialidad</strong> del envío del mensaje, es extremadamente difícil que lo descifre alguien salvo el destinatario . Cualquiera, usando la llave pública del destinatario, puede cifrarle mensajes; los que serán descifrados por el destinatario usando su clave privada.</p>
 <p>Si el propietario del par de claves usa su clave privada para cifrar un mensaje, cualquiera puede descifrarlo utilizando la clave pública del primero. En este caso se consigue la <strong>identificación</strong> y <strong>autentificación</strong> del remitente, ya que se sabe que solo pudo haber sido él quien empleó su clave privada (salvo que un tercero la haya obtenido). Esta idea es el fundamento de la <strong>firma digital</strong>, donde jurídicamente existe la presunción de que el firmante es efectivamente el dueño de la clave privada.</p>
@@ -755,26 +720,16 @@
 <p>"Caja" y "cerradura" son variables, dos datos (en el caso más sencillo, dos números) necesarios ambos para resolver un determinado problema matemático de manera inmediata. Es cierto que teniendo solo la "cerradura" (alguien que interceptase la caja antes de que llegue a David), un cerrajero experto podría abrir la caja sin necesidad de la "llave", pero, en la práctica, un sistema de cifrado competente exhibe una complejidad tal que su resolución, desconociendo la clave privada del destinatario, exige de una potencia computacional o de un coste en tiempo desproporcionadamente mayor al valor esperado del robo de la información (la computación cuántica, por ejemplo, reduciría en mucho dicho coste, volviendo obsoletos no pocos sistemas criptográficos que a día de hoy pueden considerarse efectivamente invulnerables). </p>
 <h3 id="ejemplo-2-firma-digital">Ejemplo 2: Firma digital</h3>
 <p><img alt="Exemple" src="../img/ejemplo2.png" /></p>
-<blockquote>
-<p><strong>Debes de realizar las tareas</strong> con los títulos siguientes en Moodle.</p>
-</blockquote>
-<ul>
-<li>Cifrado asimétrico - Obtener claves públicas de terceros</li>
-<li>Cifrado asimétrico - Cifrar un archivo</li>
-<li>Cifrado asimétrico - Crear claves</li>
-<li>Cifrado asimétrico - Difusión de tu clave pública</li>
-<li>Cifrado asimétrico - Descifrar un archivo</li>
-<li>Firma digital</li>
-</ul>
 <h2 id="5-infraestructura-pki">5. Infraestructura PKI</h2>
 <p>Según indica Ramón Onrubia en los apuntes de su curso, tenemos el siguiente escenario. </p>
 <p>Hemos visto en el punto anterior, que la criptografía de clave pública nos proporciona autenticación, confidencialidad, integridad y no repudio, necesarios hoy en día para garantizar una buena seguridad en la información. Como hemos visto, esto se consigue con un sistema de claves públicas y privadas que combinándolos adecuadamente nos proporcionan los servicios citados anteriormente.</p>
 <p>Pero el principal problema que surge es la confianza. ¿Cómo puedo garantizar que la clave pública de un usuario es suya y no es la de un impostor? Cualquiera puede generar un par de claves y pretender ser otra persona. Aquí es donde entran en juego las autoridades de certificación (AC o CA, del inglés Certification Authority), que asumen la responsabilidad de autenticar la identidad de esa clave pública y que aparecerá en un documento electrónico llamado certificado digital.</p>
 <p>Todo este conjunto de certificados, firmas digitales, autoridades de certificación y los procesos que intervienen, forman parte de lo que se conoce como infraestructura de clave pública que pasamos a definir a continuación.</p>
-<blockquote>
-<p>Por infraestructura de clave pública o PKI (Public Key Infraestructure) se entiende el conjunto de herramientas hardware, software, procesos y procedimientos legales que permiten crear, gestionar, almacenar, distribuir y revocar certificados digitales.</p>
+<div class="admonition note">
+<p class="admonition-title">PKI</p>
+<p>Por infraestructura de clave pública o PKI (Public Key Infraestructure) se entiende el conjunto de herramientas hardware, software, procesos y procedimientos legales que permiten crear, gestionar, almacenar, distribuir y revocar certificados digitales. </p>
 <p>Este término incluye por tanto las autoridades de certificación y al resto de elementos que participan como los certificados digitales o los algoritmos de clave pública y firma digital en comunicaciones  y transacciones electrónicas.</p>
-</blockquote>
+</div>
 <p>Hay que indicar también que para usar la firma digital y los algoritmos de clave pública, no es necesaria la PKI, como se ha podido ver en las prácticas del punto anterior.</p>
 <p>Una infraestructura de clave pública consta de:</p>
 <ul>
@@ -786,17 +741,6 @@
 <li>Autoridad de Validación (opcional), que suministra información de forma online (en tiempo real) acerca del estado de un certificado</li>
 </ul>
 <p><img alt="Infraestructura PKI" src="../img/pki_componentes.png" /></p>
-<blockquote>
-<p>Realiza la <code>Práctica 2: verificación de certificados digitales.</code> de los apuntes de Ramón Onrubia.</p>
-</blockquote>
-<h3 id="seguridad-en-la-capa-de-trasporte">Seguridad en la capa de trasporte</h3>
-<blockquote>
-<p>Debes de consultar el apartado titulado <code>Seguridad de la capa de transporte</code> de Moodle y realizar las actividades que allí se indican.</p>
-</blockquote>
-<h3 id="pki-propia-con-openssl">PKI própia con OpenSSL</h3>
-<blockquote>
-<p>Debes de consultar el apartado titulado <code>PKI propia con OpenSSL</code> de Moodle y realizar las actividades que allí se indican.</p>
-</blockquote>
 
 
 
