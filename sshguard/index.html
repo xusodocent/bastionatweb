@@ -9,10 +9,8 @@
       
       
       
-        <link rel="prev" href="../apunts/">
+        <link rel="prev" href="../sshaudit/">
       
-      
-        <link rel="next" href="../sshguard/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -20,7 +18,7 @@
     
     
       
-        <title>SSH-Audit - BASTIONAT DE XARXES I SISTEMES - CE Ciberseguretat</title>
+        <title>SSH-Guard - BASTIONAT DE XARXES I SISTEMES - CE Ciberseguretat</title>
       
     
     
@@ -75,7 +73,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#contexto" class="md-skip">
+        <a href="#fortificacion-del-servidor-sshguard" class="md-skip">
           Salta el contingut
         </a>
       
@@ -108,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              SSH-Audit
+              SSH-Guard
             
           </span>
         </div>
@@ -257,7 +255,7 @@
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="./" class="md-tabs__link">
+        <a href="../sshaudit/" class="md-tabs__link">
           
   
   SSH
@@ -544,6 +542,27 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../sshaudit/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SSH-Audit
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -558,7 +577,7 @@
           
   
   <span class="md-ellipsis">
-    SSH-Audit
+    SSH-Guard
   </span>
   
 
@@ -569,7 +588,7 @@
         
   
   <span class="md-ellipsis">
-    SSH-Audit
+    SSH-Guard
   </span>
   
 
@@ -589,6 +608,16 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#fortificacion-del-servidor-sshguard" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fortificación del servidor: SSHGuard
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Fortificación del servidor: SSHGuard">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#contexto" class="md-nav__link">
     <span class="md-ellipsis">
       Contexto
@@ -596,21 +625,47 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
+  <a href="#recursos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Recursos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#tareas" class="md-nav__link">
     <span class="md-ellipsis">
       Tareas
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Tareas">
-      <ul class="md-nav__list">
+</li>
         
           <li class="md-nav__item">
-  <a href="#audita-el-cliente-de-ssh-que-estes-utilizando" class="md-nav__link">
+  <a href="#instalacion" class="md-nav__link">
     <span class="md-ellipsis">
-      Audita el cliente de SSH que estés utilizando.
+      Instalación
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comprobaciones-finales" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comprobaciones finales
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#entrega" class="md-nav__link">
+    <span class="md-ellipsis">
+      Entrega
     </span>
   </a>
   
@@ -625,27 +680,6 @@
   
 </nav>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../sshguard/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    SSH-Guard
-  </span>
-  
-
-      </a>
     </li>
   
 
@@ -683,6 +717,16 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#fortificacion-del-servidor-sshguard" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fortificación del servidor: SSHGuard
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Fortificación del servidor: SSHGuard">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#contexto" class="md-nav__link">
     <span class="md-ellipsis">
       Contexto
@@ -690,21 +734,47 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
+  <a href="#recursos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Recursos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#tareas" class="md-nav__link">
     <span class="md-ellipsis">
       Tareas
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Tareas">
-      <ul class="md-nav__list">
+</li>
         
           <li class="md-nav__item">
-  <a href="#audita-el-cliente-de-ssh-que-estes-utilizando" class="md-nav__link">
+  <a href="#instalacion" class="md-nav__link">
     <span class="md-ellipsis">
-      Audita el cliente de SSH que estés utilizando.
+      Instalación
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comprobaciones-finales" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comprobaciones finales
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#entrega" class="md-nav__link">
+    <span class="md-ellipsis">
+      Entrega
     </span>
   </a>
   
@@ -730,67 +800,66 @@
                   
 
 
-  <h1>SSH-Audit</h1>
+  <h1>SSH-Guard</h1>
 
-<h2 id="contexto">Contexto</h2>
-<p><code>ssh-audit</code> es una herramienta programada en Python para la auditoría de la configuración de clientes y servidores SSH.</p>
-<div class="admonition note">
-<p class="admonition-title">Recursos</p>
-<ul>
-<li>https://github.com/arthepsy/ssh-audit, repositorio de las versiones 1.X. Sin actualizar desde 2016.</li>
-<li>https://github.com/jtesta/ssh-audit, fork del repositorio de la versión 1.X que actualmente proporciona las versiones 2.X.</li>
-<li>https://www.sshaudit.com/hardening_guides.html</li>
-</ul>
+<h2 id="fortificacion-del-servidor-sshguard">Fortificación del servidor: SSHGuard</h2>
+<h3 id="contexto">Contexto</h3>
+<div class="admonition info">
+<p class="admonition-title">SSHGuard</p>
+<p>SSHGuard es una pequeña utilidad que se ejecuta en el servidor donde esté instalado OpenSSH y sirve para proteger el equipo contra ataques de fuerza bruta. También se puede utilizar para otros servicios (correo electrónico y FTP), aunque esta práctica nos centraremos solo en SSH.</p>
 </div>
-<h2 id="tareas">Tareas</h2>
+<p>Su funcionamiento es muy sencillo:</p>
+<p>Revisa los archivos de auditoría del sistema en busca de intentos de acceso no satisfactorios reincidentes
+Bloquea las direcciones IP de los infractores utilizando alguna herramienta de firewall, entre ellas iptables. Si la dirección se encuentra en una lista blanca, no establece la regla en el firewall. Transcurrido un tiempo desbloquea la dirección del atacante, a no ser que se ha definido en una lista negra en cuyo caso no lo desbloquea.</p>
+<h3 id="recursos">Recursos</h3>
+<div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code>https://www.sshguard.net
+https://www.sshguard.net/docs.html
+Documentación SSHGuard @ Arch Linux.
+man sshguard
+man sshguard-setup
+</code></pre></div></td></tr></table></div>
+<div class="admonition danger">
+<p class="admonition-title">Bug de sshguard</p>
+<p>SSHGuard en Ubuntu 20.04 parece funcionar aunque en realidad no aplica los filtros. Consulta https://askubuntu.com/questions/1245543/how-do-i-configure-sshguard-in-ubuntu-20-04 para más información.</p>
+</div>
+<h3 id="tareas">Tareas</h3>
 <ul>
-<li>
-<p>Consulta la documentación de ssh-audit en el fichero <a href="https://github.com/jtesta/ssh-audit/blob/master/README.md">README.md</a> y léela con detenimiento.</p>
-</li>
-<li>
-<p>Instala, por cualquiera de los procedimientos documentados, ssh-audit en tu equipo.</p>
-</li>
-<li>
-<p>Te recomendamos la instalación mediante PyPI o clonando el repositorio.</p>
-</li>
+<li>Comprobaciones previas</li>
 </ul>
-<div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a>$<span class="w"> </span>git<span class="w"> </span>clone<span class="w"> </span>--depth<span class="w"> </span><span class="m">1</span><span class="w"> </span>https://github.com/jtesta/ssh-audit.git
+<p>Accede al servidor que has desplegado.
+Comprueba que se esté ejecutando el servicio SSH.</p>
+<div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a>$<span class="w"> </span>ss<span class="w"> </span>-lt
 </span></code></pre></div></td></tr></table></div>
-<ul>
-<li>
-<p>Audita el servidor de SSH de tu máquina servidora</p>
-</li>
-<li>
-<p>Ejecuta la auditoría contra la instancia de VirtualBox.</p>
-</li>
-<li>
-<p>Modifica la configuración del servidor en de función de los resultados obtenidos y de la guía de fortificación. En líneas generales, deberás:</p>
-</li>
-</ul>
-<div class="admonition warning">
-<p class="admonition-title">Hardering SSH</p>
-<ul>
-<li>Regenerar las claves RSA y ED25519.</li>
-<li>Borrar los grupos Diffie-Hellman pequeños.</li>
-<li>Habilitar las claves RSA y ED25519.</li>
-<li>Restringir los algoritmos de intercambio de claves, cifrado y MAC1 admitidos.</li>
-</ul>
-</div>
-<ul>
-<li>Ejecuta de nuevo la auditoría contra tu instancia para comprobar que las modificaciones han sido satisfactorias y ya no ofrece fallos.</li>
-</ul>
-<h3 id="audita-el-cliente-de-ssh-que-estes-utilizando">Audita el cliente de SSH que estés utilizando.</h3>
-<ul>
-<li>
-<p>Ejecuta la auditoría contra tu cliente de SSH.</p>
-</li>
-<li>
-<p>Modifica la configuración del cliente en de función de los resultados obtenidos.</p>
-</li>
-<li>
-<p>Ejecuta de nuevo la auditoría contra tu cliente de SSH para comprobar que las modificaciones han sido satisfactorias y ya no ofrece fallos.</p>
-</li>
-</ul>
+<p>Comprueba los archivos de auditoría en busca de intentos de acceso a SSH. Puedes utilizar la herramienta lnav.</p>
+<h3 id="instalacion">Instalación</h3>
+<p>Instala SSHGuard desde los paquetes de la distribución.</p>
+<p>Consulta la documentación de SSHGuard.</p>
+<p>Intenta comprender y explicar cada una de las opciones de los ficheros de configuración. Los encontrarás en la ruta /etc/sshguard.</p>
+<p>Adapta los ficheros de configuración a tus necesidades. Per exemple <strong>bloqueja als possibles atacants després de 5 intents fallids de login durant tres minuts</strong>.</p>
+<p>Reinicia el servicio.</p>
+<div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a>$<span class="w"> </span>sudo<span class="w"> </span>systemctl<span class="w"> </span>reload-or-restart<span class="w"> </span>sshguard
+</span></code></pre></div></td></tr></table></div>
+<p>Para conocer el estado del servicio Fail2ban podemos usar el siguiente comando que nos indicará los servicios que están supervisados:</p>
+<div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a>$<span class="w"> </span>sudo<span class="w"> </span>systemctl<span class="w"> </span>status<span class="w"> </span>sshguard
+</span></code></pre></div></td></tr></table></div>
+<h3 id="comprobaciones-finales">Comprobaciones finales</h3>
+<p>Si en el servidor ya hay direcciones IP bloqueadas se deberían mostrar en el cortafuego dentro del apartado Chain sshguard.</p>
+<div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1"></a>$<span class="w"> </span>sudo<span class="w"> </span>iptables<span class="w"> </span>-L
+</span></code></pre></div></td></tr></table></div>
+<p>Intenta establecer una conexión SSH desde un equipo que no hayas incluido en la lista blanca con un usuario que no exista o con una contraseña errónea. Después de varios intentos ya no te dejará conectar.</p>
+<div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1"></a>$<span class="w"> </span>ssh<span class="w"> </span>usuario_que_no_existe@nombreServidor
+</span></code></pre></div></td></tr></table></div>
+<p>Realiza las mismas pruebas desde un equipo que hayas incluido en la lista blanca. Comprueba que no se bloquea aunque sobrepases el número máximo de intentos.</p>
+<p>Consulta el estado del cortafuego. No debería aparecer la dirección IP desde la que has intentado acceder en la lista de reglas.</p>
+<div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1"></a>$<span class="w"> </span>sudo<span class="w"> </span>iptables<span class="w"> </span>-L
+</span></code></pre></div></td></tr></table></div>
+<h3 id="entrega">Entrega</h3>
+<p>Sube las capturas de pantalla pedidas en el enunciado dentro de un único archivo PDF.
+No olvides marcar en las capturas de pantalla los cambios realizados para que los pueda localizar más fácilmente.</p>
 
 
 
