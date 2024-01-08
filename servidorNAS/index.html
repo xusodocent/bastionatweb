@@ -1,0 +1,1484 @@
+
+<!doctype html>
+<html lang="ca" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../fail2ban_telegram/">
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.14">
+    
+    
+      
+        <title>Còpies de seguretat - BASTIONAT DE XARXES I SISTEMES - CE Ciberseguretat</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.fad675c6.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.356b1318.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#tipus-de-copies-de-seguretat" class="md-skip">
+          Salta el contingut
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Capçalera">
+    <a href=".." title="BASTIONAT DE XARXES I SISTEMES - CE Ciberseguretat" class="md-header__button md-logo" aria-label="BASTIONAT DE XARXES I SISTEMES - CE Ciberseguretat" data-md-component="logo">
+      
+  <img src="../img/logocap.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            BASTIONAT DE XARXES I SISTEMES - CE Ciberseguretat
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Còpies de seguretat
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Format oscur"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Format oscur" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Format clar"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Format clar" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Cerca" placeholder="Cerca" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Cerca">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Neteja" aria-label="Neteja" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicialitzant cerca
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Pestanyes" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+    
+  
+  Inici
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../instalar_gns3_primer_escenari/" class="md-tabs__link">
+          
+  
+  GNS3
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../criptografia/" class="md-tabs__link">
+          
+  
+  Criptografía
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../sshaudit/" class="md-tabs__link">
+          
+  
+  SSH
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+  Fortificació equip base
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navegació" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="BASTIONAT DE XARXES I SISTEMES - CE Ciberseguretat" class="md-nav__button md-logo" aria-label="BASTIONAT DE XARXES I SISTEMES - CE Ciberseguretat" data-md-component="logo">
+      
+  <img src="../img/logocap.png" alt="logo">
+
+    </a>
+    BASTIONAT DE XARXES I SISTEMES - CE Ciberseguretat
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Inici
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    GNS3
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            GNS3
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../instalar_gns3_primer_escenari/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. Instal·lació de GNS3
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Criptografía
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Criptografía
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../criptografia/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tema
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Prac_T2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pràctiques del tema
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../apunts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Apunts complementaris
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    SSH
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            SSH
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sshaudit/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SSH-Audit
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sshguard/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SSH-Guard
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fail2ban_telegram/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    fail2ban i Telegram
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Fortificació equip base
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Fortificació equip base
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Còpies de seguretat
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Còpies de seguretat
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Taula de continguts">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Taula de continguts
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#tipus-de-copies-de-seguretat" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tipus de còpies de seguretat
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tipus de còpies de seguretat">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-copia-de-seguretat-completa-full-backup" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Còpia de Seguretat Completa (Full Backup):
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-copia-de-seguretat-incremental" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Còpia de Seguretat Incremental:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-copia-de-seguretat-diferencial" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Còpia de Seguretat Diferencial:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-copia-de-seguretat-selectiva-o-personalitzada" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Còpia de Seguretat Selectiva o Personalitzada:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-copia-de-seguretat-local" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Còpia de Seguretat Local:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-copia-de-seguretat-en-linia-o-en-el-nuvol" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Còpia de Seguretat en Línia o en el Núvol:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-copia-de-seguretat-automatica" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Còpia de Seguretat Automàtica:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8-copia-de-seguretat-fuente-live-backup" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Còpia de Seguretat Fuente (Live Backup):
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#esquema-de-copies" class="md-nav__link">
+    <span class="md-ellipsis">
+      Esquema de còpies
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Esquema de còpies">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-copia-de-seguretat-completa-regular-full-backup" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Còpia de Seguretat Completa Regular (Full Backup):
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-copia-de-seguretat-incremental_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Còpia de Seguretat Incremental:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-copia-de-seguretat-diferencial_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Còpia de Seguretat Diferencial:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-copia-de-seguretat-completa-incrementalsdiferencials" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Còpia de Seguretat Completa + Incrementals/Diferencials:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-copies-de-seguretat-regulars-i-automatiques" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Còpies de Seguretat Regulars i Automàtiques:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#consells-addicionals" class="md-nav__link">
+    <span class="md-ellipsis">
+      Consells Addicionals:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#servidor-nas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Servidor NAS
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Servidor NAS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#caracteristiques-principals" class="md-nav__link">
+    <span class="md-ellipsis">
+      Característiques Principals:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#openmediavault" class="md-nav__link">
+    <span class="md-ellipsis">
+      Openmediavault
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#programari" class="md-nav__link">
+    <span class="md-ellipsis">
+      Programari
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Programari">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#windows" class="md-nav__link">
+    <span class="md-ellipsis">
+      Windows:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linux" class="md-nav__link">
+    <span class="md-ellipsis">
+      Linux:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#activitat-practica" class="md-nav__link">
+    <span class="md-ellipsis">
+      Activitat pràctica
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Taula de continguts">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Taula de continguts
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#tipus-de-copies-de-seguretat" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tipus de còpies de seguretat
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tipus de còpies de seguretat">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-copia-de-seguretat-completa-full-backup" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Còpia de Seguretat Completa (Full Backup):
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-copia-de-seguretat-incremental" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Còpia de Seguretat Incremental:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-copia-de-seguretat-diferencial" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Còpia de Seguretat Diferencial:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-copia-de-seguretat-selectiva-o-personalitzada" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Còpia de Seguretat Selectiva o Personalitzada:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-copia-de-seguretat-local" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Còpia de Seguretat Local:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-copia-de-seguretat-en-linia-o-en-el-nuvol" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Còpia de Seguretat en Línia o en el Núvol:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-copia-de-seguretat-automatica" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Còpia de Seguretat Automàtica:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8-copia-de-seguretat-fuente-live-backup" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Còpia de Seguretat Fuente (Live Backup):
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#esquema-de-copies" class="md-nav__link">
+    <span class="md-ellipsis">
+      Esquema de còpies
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Esquema de còpies">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-copia-de-seguretat-completa-regular-full-backup" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Còpia de Seguretat Completa Regular (Full Backup):
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-copia-de-seguretat-incremental_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Còpia de Seguretat Incremental:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-copia-de-seguretat-diferencial_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Còpia de Seguretat Diferencial:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-copia-de-seguretat-completa-incrementalsdiferencials" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Còpia de Seguretat Completa + Incrementals/Diferencials:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-copies-de-seguretat-regulars-i-automatiques" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Còpies de Seguretat Regulars i Automàtiques:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#consells-addicionals" class="md-nav__link">
+    <span class="md-ellipsis">
+      Consells Addicionals:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#servidor-nas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Servidor NAS
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Servidor NAS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#caracteristiques-principals" class="md-nav__link">
+    <span class="md-ellipsis">
+      Característiques Principals:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#openmediavault" class="md-nav__link">
+    <span class="md-ellipsis">
+      Openmediavault
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#programari" class="md-nav__link">
+    <span class="md-ellipsis">
+      Programari
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Programari">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#windows" class="md-nav__link">
+    <span class="md-ellipsis">
+      Windows:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linux" class="md-nav__link">
+    <span class="md-ellipsis">
+      Linux:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#activitat-practica" class="md-nav__link">
+    <span class="md-ellipsis">
+      Activitat pràctica
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>Còpies de seguretat</h1>
+
+<h2 id="tipus-de-copies-de-seguretat">Tipus de còpies de seguretat</h2>
+<p>Hi ha diversos tipus de còpies de seguretat que pots utilitzar per protegir les teves dades. Cada tipus té les seves avantatges i desavantatges, i la seva utilitat pot dependre dels teus requeriments específics. Aquí tens alguns dels tipus més comuns de còpies de seguretat:</p>
+<h3 id="1-copia-de-seguretat-completa-full-backup">1. <strong>Còpia de Seguretat Completa (Full Backup):</strong></h3>
+<ul>
+<li><strong>Descripció:</strong> Es realitza una còpia completa de totes les dades seleccionades.</li>
+<li><strong>Avantatges:</strong> Recuperació completa i ràpida de totes les dades.</li>
+<li><strong>Desavantatges:</strong> Requereix més temps i emmagatzematge.</li>
+</ul>
+<h3 id="2-copia-de-seguretat-incremental">2. <strong>Còpia de Seguretat Incremental:</strong></h3>
+<ul>
+<li><strong>Descripció:</strong> Només es realitza una còpia de les dades que han canviat des de l'última còpia de seguretat.</li>
+<li><strong>Avantatges:</strong> Menys emmagatzematge i temps requerit per cada còpia de seguretat.</li>
+<li><strong>Desavantatges:</strong> Recuperació més complexa, ja que depèn de còpies anteriors.</li>
+</ul>
+<h3 id="3-copia-de-seguretat-diferencial">3. <strong>Còpia de Seguretat Diferencial:</strong></h3>
+<ul>
+<li><strong>Descripció:</strong> Es realitza una còpia de totes les dades que han canviat des de l'última còpia completa.</li>
+<li><strong>Avantatges:</strong> Més fàcil de restaurar que una còpia incremental, ja que només necessites la darrera còpia completa i l'última diferencial.</li>
+<li><strong>Desavantatges:</strong> Pot requerir més emmagatzematge que una còpia incremental.</li>
+</ul>
+<h3 id="4-copia-de-seguretat-selectiva-o-personalitzada">4. <strong>Còpia de Seguretat Selectiva o Personalitzada:</strong></h3>
+<ul>
+<li><strong>Descripció:</strong> Només es realitza una còpia de les carpetes o fitxers seleccionats.</li>
+<li><strong>Avantatges:</strong> Menys emmagatzematge i més control sobre què es còpia.</li>
+<li><strong>Desavantatges:</strong> Pot ser més laboriós gestionar què s'ha de còpia i què no.</li>
+</ul>
+<h3 id="5-copia-de-seguretat-local">5. <strong>Còpia de Seguretat Local:</strong></h3>
+<ul>
+<li><strong>Descripció:</strong> Les dades es còpien en un dispositiu de emmagatzematge local com ara un disc dur extern o un servidor local.</li>
+<li><strong>Avantatges:</strong> Accés ràpid i control total.</li>
+<li><strong>Desavantatges:</strong> Vulnerable a pèrdua de dades en cas d'incendi, inundació o altres desastres locals.</li>
+</ul>
+<h3 id="6-copia-de-seguretat-en-linia-o-en-el-nuvol">6. <strong>Còpia de Seguretat en Línia o en el Núvol:</strong></h3>
+<ul>
+<li><strong>Descripció:</strong> Les dades es còpien i emmagatzemen en un servei de núvol o en línia.</li>
+<li><strong>Avantatges:</strong> Accessible des de qualsevol lloc amb connexió a internet i protegit contra desastres locals.</li>
+<li><strong>Desavantatges:</strong> Pot ser necessària una connexió ràpida a internet, i hi pot haver costos associats amb el servei de núvol.</li>
+</ul>
+<h3 id="7-copia-de-seguretat-automatica">7. <strong>Còpia de Seguretat Automàtica:</strong></h3>
+<ul>
+<li><strong>Descripció:</strong> Es programen còpies de seguretat automàtiques segons un calendari o triggers específics.</li>
+<li><strong>Avantatges:</strong> Minimitza la intervenció humana i assegura còpies regulars.</li>
+<li><strong>Desavantatges:</strong> Pot consumir recursos del sistema durant la còpia de seguretat programada.</li>
+</ul>
+<h3 id="8-copia-de-seguretat-fuente-live-backup">8. <strong>Còpia de Seguretat Fuente (Live Backup):</strong></h3>
+<ul>
+<li><strong>Descripció:</strong> Es realitzen còpies de seguretat contínuament, en temps real, a mesura que es produeixen els canvis.</li>
+<li><strong>Avantatges:</strong> Mínima pèrdua de dades, ja que les còpies es realitzen immediatament després de cada canvi.</li>
+<li><strong>Desavantatges:</strong> Pot ser més intensiu en termes de recursos.</li>
+</ul>
+<p>La selecció del tipus de còpia de seguretat depèn de factors com la quantitat de dades, els recursos disponibles, la freqüència dels canvis i els requisits de recuperació. Moltes organitzacions utilitzen una combinació de diversos tipus de còpies de seguretat per garantir una protecció completa de les seves dades.</p>
+<h2 id="esquema-de-copies">Esquema de còpies</h2>
+<p>L'elecció d'un esquema de còpies de seguretat depèn de diversos factors, com la quantitat de dades, la freqüència dels canvis, els recursos disponibles i les necessitats específiques de cada usuari o organització. Aquí tens algunes opcions d'esquemes de còpies de seguretat i quan podrien ser més recomanables:</p>
+<h3 id="1-copia-de-seguretat-completa-regular-full-backup">1. <strong>Còpia de Seguretat Completa Regular (Full Backup):</strong></h3>
+<ul>
+<li><strong>Frequència:</strong> Setmanal o mensual.</li>
+<li><strong>Quan és recomanable:</strong> Per a conjunts de dades més petits o quan es poden permetre temps més llargs de còpies de seguretat. És útil per a la recuperació ràpida de tots els fitxers en cas de pèrdua.</li>
+</ul>
+<h3 id="2-copia-de-seguretat-incremental_1">2. <strong>Còpia de Seguretat Incremental:</strong></h3>
+<ul>
+<li><strong>Frequència:</strong> Diària o fins i tot més freqüent.</li>
+<li><strong>Quan és recomanable:</strong> Per a conjunts de dades grans on les còpies de seguretat completes són costoses en termes de temps i emmagatzematge. Es recomana quan es produeixen canvis freqüents en els fitxers.</li>
+</ul>
+<h3 id="3-copia-de-seguretat-diferencial_1">3. <strong>Còpia de Seguretat Diferencial:</strong></h3>
+<ul>
+<li><strong>Frequència:</strong> Diària o setmanal.</li>
+<li><strong>Quan és recomanable:</strong> Similar a la còpia de seguretat incremental, però amb un temps de restauració més ràpid. És una bona opció quan els temps de còpia de seguretat incrementals són massa llargs, però encara es vol accelerar la restauració.</li>
+</ul>
+<h3 id="4-copia-de-seguretat-completa-incrementalsdiferencials">4. <strong>Còpia de Seguretat Completa + Incrementals/Diferencials:</strong></h3>
+<ul>
+<li><strong>Frequència:</strong> Còpia de seguretat completa seguida de còpies incrementals o diferencials més freqüents.</li>
+<li><strong>Quan és recomanable:</strong> Per combinar els avantatges de les còpies completes amb la eficiència de les còpies incrementals o diferencials. Proporciona una bona barreja de restauració ràpida i eficiència en emmagatzematge.</li>
+</ul>
+<h3 id="5-copies-de-seguretat-regulars-i-automatiques">5. <strong>Còpies de Seguretat Regulars i Automàtiques:</strong></h3>
+<ul>
+<li><strong>Frequència:</strong> Programades amb regularitat.</li>
+<li><strong>Quan és recomanable:</strong> Sempre. És important mantenir un esquema de còpies de seguretat regular i automatitzat per garantir que les dades estiguin sempre protegides. Aquest esquema pot utilitzar còpies de seguretat completes, incrementals o diferencials, segons les necessitats.</li>
+</ul>
+<h3 id="consells-addicionals">Consells Addicionals:</h3>
+<ul>
+<li>
+<p><strong>Rotació de Mitjans:</strong> Considera utilitzar múltiples mitjans de còpia de seguretat (discs, núvols, cintes) i rotar-los regularment per evitar problemes amb mitjans deteriorats.</p>
+</li>
+<li>
+<p><strong>Prova de Restauració:</strong> Realitza proves de restauració periòdiques per garantir que les teves còpies de seguretat siguin efectives.</p>
+</li>
+<li>
+<p><strong>Monitorització i Informes:</strong> Utilitza eines de monitorització i informes per supervisar l'estat i l'èxit de les teves còpies de seguretat.</p>
+</li>
+</ul>
+<p>La millor estratègia de còpies de seguretat dependrà del teu entorn específic i de les teves necessitats. És recomanable adaptar l'esquema de còpies de seguretat en funció dels canvis en les dades i de la importància de la informació.</p>
+<h2 id="servidor-nas">Servidor NAS</h2>
+<p>Un servidor Network Attached Storage (NAS) és un dispositiu especialitzat que ofereix emmagatzematge centralitzat i accessibilitat a través d'una xarxa local (LAN) o fins i tot a través d'internet. Aquest tipus de servidor està dissenyat específicament per a la gestió i el compartiment de dades, oferint funcions avançades com a emmagatzematge en xarxa, gestió de fitxers, control d'accés i serveis de servidor addicionals. Aquí tens algunes de les característiques i funcions principals d'un servidor NAS:</p>
+<h3 id="caracteristiques-principals">Característiques Principals:</h3>
+<p><strong>Emmagatzematge Centralitzat:</strong>
+   - El NAS proporciona una ubicació centralitzada on es poden emmagatzemar i organitzar dades. Això facilita l'accés i la gestió de fitxers per part dels usuaris de la xarxa.</p>
+<p><strong>Xarxa Local (LAN) i Accés Remot:</strong>
+   - Pot ser accedit localment a través de la xarxa local de l'usuari o de forma remota mitjançant una connexió a internet. Això permet l'accés a les dades des de qualsevol lloc amb una connexió a la xarxa.</p>
+<p><strong>Serveis de Fitxers:</strong>
+   - Ofereix serveis de fitxers com compartició de fitxers, transferència de fitxers i suport per protocols com SMB/CIFS (per a sistemes Windows), NFS (per a sistemes Unix/Linux) i AFP (per a sistemes macOS).</p>
+<p><strong>Gestió de Discs i RAID:</strong>
+   - Molts servidors NAS permeten la gestió de múltiples discs durs, amb la possibilitat de configurar-los utilitzant diverses opcions RAID (Redundant Array of Independent Disks) per millorar la seguretat i la disponibilitat de les dades.</p>
+<p><strong>Serveis Addicionals:</strong>
+   - Pot oferir diversos serveis addicionals com serveis de còpia de seguretat, servidor multimèdia, servei de correu electrònic, servidors d'aplicacions, i altres aplicacions que augmenten la funcionalitat del dispositiu.</p>
+<p><strong>Control d'Accés i Seguretat:</strong>
+   - Proporciona funcions de control d'accés per gestionar qui pot accedir a les carpetes o fitxers específics. La seguretat és una consideració important amb diverses opcions de xifrat i autenticació.</p>
+<p><strong>Gestió Remota:</strong>
+   - Molts servidors NAS ofereixen interfícies de gestió web que permeten als usuaris gestionar i configurar el dispositiu de forma remota.</p>
+<p><strong>Consum Energètic Eficient:</strong>
+   - Són dissenyats per ser eficients en el consum d'energia, especialment comparats amb servidors més grans i sistemes de còpies de seguretat tradicionals.</p>
+<p><strong>Eines de Col·laboració:</strong>
+   - Alguns models inclouen funcionalitats de col·laboració com àlbums de fotos compartits, aplicacions d'edició de documents en línia i altres eines col·laboratives.</p>
+<p>Un servidor NAS és una solució versàtil que pot ser utilitzada tant per a usuaris domèstics com per a empreses, proporcionant un mitjà eficient i segur d'emmagatzemar i accedir a les dades. La seva flexibilitat i escalabilitat fan que sigui una opció popular per a diverses necessitats d'emmagatzematge.</p>
+<h2 id="openmediavault">Openmediavault</h2>
+<div class="admonition info">
+<p class="admonition-title">Openmediavault</p>
+<p>És una distribució de <code>Linux</code> orientada a la creació de servidors NAS. Pots descarregar la iso <a href="https://www.openmediavault.org/?page_id=77">ací</a></p>
+</div>
+<p>OpenMediaVault (OMV) és una solució de gestió de serveis de xarxa de codi obert basada en Linux que proporciona eines per a la creació d'un servidor de xarxa amb funcionalitats com emmagatzematge en xarxa (NAS), control d'accés, còpies de seguretat i altres serveis relacionats. Aquesta plataforma està dissenyada per ser una solució lleugera i fàcil d'utilitzar, adequada per a usuaris domèstics, petits empresaris i altres entorns similars.</p>
+<p>Aquí tens algunes de les característiques principals d'OpenMediaVault:</p>
+<ol>
+<li>
+<p><strong>Interfície Web Intuïtiva:</strong> OMV ofereix una interfície web fàcil d'utilitzar que permet als usuaris gestionar les seves tasques sense necessitat de conèixer la línia de comandes de Linux. Aquesta interfície ofereix un panell de control amb opcions clares i accessible des de qualsevol navegador web.</p>
+</li>
+<li>
+<p><strong>Gestió de Emmagatzematge:</strong> Proporciona eines per gestionar discs durs, crear particions, configurar RAID (Redundant Array of Independent Disks) i gestionar l'espai de magatzematge en xarxa.</p>
+</li>
+<li>
+<p><strong>Serveis de Xarxa:</strong> Inclou serveis de xarxa com SMB/CIFS (per a compatibilitat amb Windows), NFS (per a compatibilitat amb Unix/Linux) i AFP (per a compatibilitat amb macOS), permetent la compartició de fitxers a través de la xarxa.</p>
+</li>
+<li>
+<p><strong>Còpies de Seguretat i Restauració:</strong> Ofereix funcions integrades per realitzar còpies de seguretat programades i restaurar-les fàcilment en cas de necessitat.</p>
+</li>
+<li>
+<p><strong>Control d'Accés:</strong> Proporciona opcions de control d'accés per gestionar qui té permisos per accedir a carpetes o fitxers específics.</p>
+</li>
+<li>
+<p><strong>Plugins i Extensions:</strong> OMV té un sistema de plugins que permet als usuaris ampliar les funcionalitats del sistema amb diverses extensions. Això inclou l'accés a serveis com Plex Media Server, Nextcloud i altres.</p>
+</li>
+<li>
+<p><strong>Monitorització del Sistema:</strong> Inclou eines per a la monitorització del sistema, incloent informació sobre l'ús de la CPU, memòria i altres recursos.</p>
+</li>
+<li>
+<p><strong>Comunitat Activa:</strong> Sota la llicència de codi obert, OMV gaudeix d'una comunitat activa d'usuaris i desenvolupadors que ofereixen suport i col·laboració.</p>
+</li>
+</ol>
+<p>OpenMediaVault es presenta com una opció versàtil per als usuaris que busquen configurar un servidor de xarxa amb funcionalitats avançades sense haver de fer servir una gran quantitat de coneixements tècnics. És especialment útil per a la creació d'un servidor NAS, però també pot ser utilitzat per altres finalitats relacionades amb la gestió de serveis de xarxa.</p>
+<h2 id="programari">Programari</h2>
+<p>Hi ha diversos programaris de còpies de seguretat disponibles per a sistemes Windows i Linux, cadascun amb les seves característiques i funcionalitats úniques. Aquí tens una llista de alguns dels principals programaris de còpies de seguretat per a ambdues plataformes:</p>
+<h3 id="windows">Windows:</h3>
+<p><strong>Backup and Restore (Windows 7):</strong>
+   - El sistema operatiu Windows 7 ofereix una funció de còpies de seguretat i restauració integrada que permet als usuaris realitzar còpies de seguretat programades.</p>
+<p><strong>File History (Windows 8 i 10):</strong>
+   - File History és una funcionalitat integrada en Windows 8 i 10 que realitza còpies de seguretat automàtiques de fitxers importants. Es pot configurar per fer còpies en un disc dur extern o a una ubicació de xarxa.</p>
+<p><strong>Acronis True Image:</strong>
+   - Acronis True Image ofereix funcions avançades de còpies de seguretat, com la còpia de seguretat de tot el sistema, la restauració granular i la possibilitat de crear imatges de disc.</p>
+<p><strong>EaseUS Todo Backup:</strong>
+   - EaseUS Todo Backup proporciona funcions de còpia de seguretat i restauració de tot el sistema, particions o fitxers individuals. També ofereix còpies de seguretat programades i incremental.</p>
+<p><strong>Veeam Agent for Windows:</strong>
+   - Veeam Agent for Windows és una solució gratuïta que permet fer còpies de seguretat i restaurar tot el sistema, volums o fitxers específics.</p>
+<h3 id="linux">Linux:</h3>
+<p><strong>rsync:</strong>
+   - <code>rsync</code> és una eina de línia de comandes que es pot utilitzar per sincronitzar i fer còpies de fitxers i directoris entre sistemes. És una eina potent i àmpliament utilitzada en entorns de Linux.</p>
+<p><strong>Duplicity:</strong>
+   - Duplicity és una eina de còpies de seguretat basada en la línia de comandes que ofereix xifrat, compressió i suport per diversos serveis de copia de seguretat remots com Amazon S3, SSH, i altres.</p>
+<p><strong>Bacula:</strong>
+   - Bacula és una solució de còpies de seguretat empresarial amb una arquitectura client-servidor. Pot gestionar còpies de seguretat, restauracions i verificacions de fitxers.</p>
+<p><strong>Amanda Backup:</strong>
+   - Amanda Backup, o simplement Amanda, és una solució de còpies de seguretat lliure i d'ús empresarial per a sistemes Unix i Linux.</p>
+<p><strong>Restic:</strong>
+   - Restic és una eina de còpies de seguretat moderna que ofereix suport per a diverses plataformes, xifrat, deduplicació i integració amb diversos serveis de còpies de seguretat en núvol.</p>
+<p><strong>Timeshift:</strong>
+   - Timeshift és una eina específica per a Linux que ofereix còpies de seguretat del sistema de fitxers, permetent als usuaris restaurar el sistema a un estat anterior.</p>
+<p>Es recomana seleccionar una eina que compleixi les teves necessitats específiques i garantir que les còpies de seguretat es realitzin regularment per mantenir la integritat de les teves dades.</p>
+<h2 id="activitat-practica">Activitat pràctica</h2>
+<p>Pots trobar una guia dels aspectes de configuració essencials en aquest tutorial.</p>
+<p>http://somebooks.es/crea-tu-propio-nas-con-openmediavault-parte-1/</p>
+<p>http://somebooks.es/crea-tu-propio-nas-con-openmediavault-parte-2/</p>
+<p>En classe s'han vist les següents accions de securització.</p>
+<ul>
+<li>
+<p>Habilitar connexió d'administració https</p>
+</li>
+<li>
+<p>Habilitar FTP segur</p>
+</li>
+<li>
+<p>Generar certificats del domini i per a ssh</p>
+</li>
+<li>
+<p>Creació d'un RAID-5</p>
+</li>
+<li>
+<p>Habilitar serveis SMB/CIFS</p>
+</li>
+<li>
+<p>Creació d'usuaris</p>
+</li>
+<li>
+<p>Habilitació de quotes de disc</p>
+</li>
+</ul>
+<p>Crea un sistema de còpies de seguretat automatitzat en alguna màquina virtual o en l'ordinador anfitrió per a que realitze les còpies en el NAS que has creat.</p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "content.code.copy", "content.code.annotate", "content.code.select"], "search": "../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copiat al porta-retalls", "clipboard.copy": "C\u00f2pia al porta-retalls", "search.result.more.one": "1 m\u00e9s en aquesta p\u00e0gina", "search.result.more.other": "# m\u00e9s en aquesta p\u00e0gina", "search.result.none": "Cap document coincideix", "search.result.one": "1 document coincident", "search.result.other": "# documents coincidents", "search.result.placeholder": "Escriu per a comen\u00e7ar a cercar", "search.result.term.missing": "Desaparegut", "select.version": "Selecciona la versi\u00f3"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.cd18aaf1.min.js"></script>
+      
+    
+  </body>
+</html>
