@@ -1222,6 +1222,17 @@
 <p>Afegix dispositius i links per a poder monitoritzar l'escenari. Ha de quedar-te d'una forma molt semblant a aquesta.</p>
 <p><img alt="monitoritzar" src="../img/monitor_the_dude.png" /></p>
 <h3 id="crea-una-notificacio-de-telegram">Crea una notificació de Telegram</h3>
+<p>El codi per a crear la notificació és aquest:</p>
+<div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
+<span class="normal"><a href="#__codelineno-0-2">2</a></span>
+<span class="normal"><a href="#__codelineno-0-3">3</a></span>
+<span class="normal"><a href="#__codelineno-0-4">4</a></span>
+<span class="normal"><a href="#__codelineno-0-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a>:local CHATID &quot;Id_de_tu _chat&quot;
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a>:local BOTID &quot;Token_de_tu_bot&quot;
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a>:local mensaje &quot; -ejemplo- The Dude --&gt;&gt; ¡¡EPP!! A las: [Time], Equipo:[Device.Name] [Service.ProblemDescription] ([Service.Status])&quot;
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a>:local apiUrl &quot;https://api.telegram.org/bot$BOTID/sendmessage\?chat_id=$CHATID&amp;text=$mensaje&quot;
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5"></a>/tool fetch mode=https url=&quot;$apiUrl&quot; keep-result=no
+</span></code></pre></div></td></tr></table></div>
 <p>Crea una notificació com aquesta:</p>
 <p><img alt="notificació" src="../img/notificacio_telegram_dude.png" /></p>
 <div class="admonition warning">
